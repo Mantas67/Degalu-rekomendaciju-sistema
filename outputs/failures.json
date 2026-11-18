@@ -1,0 +1,85 @@
+{
+ "n": 1806,
+ "mean_regret": 0.14265900241984902,
+ "zero_regret_share": 0.7065337763012182,
+ "crosstab": {
+  "apsukos": {
+   "apsukos": 259,
+   "greitejimas": 5,
+   "greitis": 1,
+   "kondicionierius": 0,
+   "tuscioji_eiga": 0
+  },
+  "greitejimas": {
+   "apsukos": 334,
+   "greitejimas": 776,
+   "greitis": 8,
+   "kondicionierius": 6,
+   "tuscioji_eiga": 2
+  },
+  "greitis": {
+   "apsukos": 70,
+   "greitejimas": 6,
+   "greitis": 99,
+   "kondicionierius": 0,
+   "tuscioji_eiga": 0
+  },
+  "kondicionierius": {
+   "apsukos": 37,
+   "greitejimas": 9,
+   "greitis": 0,
+   "kondicionierius": 101,
+   "tuscioji_eiga": 0
+  },
+  "tuscioji_eiga": {
+   "apsukos": 24,
+   "greitejimas": 28,
+   "greitis": 0,
+   "kondicionierius": 0,
+   "tuscioji_eiga": 41
+  }
+ },
+ "pick_counts": {
+  "greitejimas": 824,
+  "apsukos": 724,
+  "greitis": 108,
+  "kondicionierius": 107,
+  "tuscioji_eiga": 43
+ },
+ "pick_correct": {
+  "apsukos": 259,
+  "greitejimas": 776,
+  "greitis": 99,
+  "kondicionierius": 101,
+  "tuscioji_eiga": 41
+ },
+ "worst": [
+  {
+   "seg": 3605,
+   "pick": "apsukos",
+   "pick_pred": 3.22,
+   "pick_true": 0.87,
+   "best": "greitis",
+   "best_true": 2.86,
+   "regret": 1.98
+  },
+  {
+   "seg": 3388,
+   "pick": "apsukos",
+   "pick_pred": 2.33,
+   "pick_true": 0.77,
+   "best": "greitejimas",
+   "best_true": 2.76,
+   "regret": 1.99
+  },
+  {
+   "seg": 11342,
+   "pick": "apsukos",
+   "pick_pred": 3.0,
+   "pick_true": 1.23,
+   "best": "greitejimas",
+   "best_true": 3.23,
+   "regret": 2.01
+  }
+ ]
+}

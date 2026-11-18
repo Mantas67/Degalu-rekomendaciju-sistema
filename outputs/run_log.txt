@@ -1,0 +1,317 @@
+{
+ "data": {
+  "raw_segments": 19607,
+  "removed_outliers": 162,
+  "segments": 19445,
+  "trips": 720,
+  "drivers": 60,
+  "fuel_mean": 8.425988752687717,
+  "fuel_std": 3.7272626854295154,
+  "style_counts": {
+   "eco": 6642,
+   "normalus": 6471,
+   "agresyvus": 6332
+  }
+ },
+ "split": {
+  "train_segments": 15737,
+  "test_segments": 3708,
+  "train_drivers": 48,
+  "test_drivers": 12
+ },
+ "best_hparams": {
+  "learning_rate": 0.05,
+  "max_leaf_nodes": 15,
+  "l2_regularization": 1.0
+ },
+ "regression": {
+  "Vidurkio prognozė": {
+   "RMSE": 3.9242595050963587,
+   "MAE": 3.024513795963271,
+   "R2": -0.007205728789338117,
+   "MAPE": 49.288872510561234,
+   "fit_s": 0.0016428469999709705
+  },
+  "Baseline – LinearRegression": {
+   "RMSE": 2.1154447452478666,
+   "MAE": 1.4339037111403479,
+   "R2": 0.7073111879825207,
+   "MAPE": 18.634142490099165,
+   "fit_s": 0.013166250000040236
+  },
+  "HGB be monotoniškumo": {
+   "RMSE": 1.1548616153161204,
+   "MAE": 0.7658454773155873,
+   "R2": 0.9127706486476114,
+   "MAPE": 8.915354565886972,
+   "fit_s": 0.7421089689999008
+  },
+  "Proposed – HGB + monotoniškumas": {
+   "RMSE": 1.2044195446916666,
+   "MAE": 0.8232005181919759,
+   "R2": 0.9051235692098911,
+   "MAPE": 10.509469042438683,
+   "fit_s": 0.859357048999982
+  }
+ },
+ "trip_level": {
+  "Baseline – LinearRegression": {
+   "RMSE": 0.8442964814977102,
+   "MAE": 0.6598795851624454,
+   "R2": 0.843343072078853,
+   "MAPE": 7.509970364670345
+  },
+  "Proposed – HGB + monotoniškumas": {
+   "RMSE": 0.7222013917301637,
+   "MAE": 0.5500861258852863,
+   "R2": 0.8853758075838805,
+   "MAPE": 5.931149528994402
+  }
+ },
+ "classification": {
+  "Baseline – accel_rms taisyklė (segmentas)": {
+   "acc": 0.6952535059331176,
+   "f1_macro": 0.6914645559201253
+  },
+  "Proposed – HGB (segmentas)": {
+   "acc": 0.8025889967637541,
+   "f1_macro": 0.8001567349022976
+  },
+  "Baseline – accel_rms taisyklė (kelionė)": {
+   "acc": 0.7847222222222222,
+   "f1_macro": 0.7778392443706844
+  },
+  "Proposed – HGB (kelionė)": {
+   "acc": 0.8472222222222222,
+   "f1_macro": 0.8471558836300478
+  },
+  "thresholds_accel_rms": [
+   0.47930662220740755,
+   0.6454226099389037
+  ],
+  "report_segment": {
+   "eco": {
+    "precision": 0.8902532617037605,
+    "recall": 0.9302325581395349,
+    "f1-score": 0.9098039215686274,
+    "support": 1247.0
+   },
+   "normalus": {
+    "precision": 0.7375,
+    "recall": 0.6539984164687253,
+    "f1-score": 0.6932438103231221,
+    "support": 1263.0
+   },
+   "agresyvus": {
+    "precision": 0.7704280155642024,
+    "recall": 0.8263772954924875,
+    "f1-score": 0.797422472815143,
+    "support": 1198.0
+   },
+   "accuracy": 0.8025889967637541,
+   "macro avg": {
+    "precision": 0.799393759089321,
+    "recall": 0.8035360900335826,
+    "f1-score": 0.8001567349022976,
+    "support": 3708.0
+   },
+   "weighted avg": {
+    "precision": 0.7995094606231132,
+    "recall": 0.8025889967637541,
+    "f1-score": 0.7997315385832586,
+    "support": 3708.0
+   }
+  }
+ },
+ "recommendations": {
+  "n_segments": 2228,
+  "n_action_evals": 5020,
+  "action_counts": {
+   "greitejimas": 1818,
+   "apsukos": 1557,
+   "tuscioji_eiga": 1037,
+   "greitis": 306,
+   "kondicionierius": 302
+  },
+  "Baseline – LinearRegression": {
+   "sign_accuracy": 0.7934262948207171,
+   "nonphysical_share": 0.20657370517928286,
+   "zero_effect_share": 0.0,
+   "zero_by_action": {
+    "apsukos": 0.0,
+    "greitejimas": 0.0,
+    "greitis": 0.0,
+    "kondicionierius": 0.0,
+    "tuscioji_eiga": 0.0
+   },
+   "neg_by_action": {
+    "apsukos": 0.0,
+    "greitejimas": 0.0,
+    "greitis": 0.0,
+    "kondicionierius": 0.0,
+    "tuscioji_eiga": 1.0
+   },
+   "saving_MAE": 0.33737202082783824,
+   "spearman": 0.6594878990392002,
+   "top1_hit": 0.7547065337763013,
+   "realized_saving_l100": 1.188615688204205,
+   "realized_saving_pct": 13.336449586621285
+  },
+  "HGB be monotoniškumo": {
+   "sign_accuracy": 0.8573705179282869,
+   "nonphysical_share": 0.1,
+   "zero_effect_share": 0.042629482071713146,
+   "zero_by_action": {
+    "apsukos": 0.003,
+    "greitejimas": 0.002,
+    "greitis": 0.0,
+    "kondicionierius": 0.0,
+    "tuscioji_eiga": 0.198
+   },
+   "neg_by_action": {
+    "apsukos": 0.022,
+    "greitejimas": 0.008,
+    "greitis": 0.003,
+    "kondicionierius": 0.0,
+    "tuscioji_eiga": 0.435
+   },
+   "saving_MAE": 0.32415622114223847,
+   "spearman": 0.7917151993580162,
+   "top1_hit": 0.805094130675526,
+   "realized_saving_l100": 1.2042475077840362,
+   "realized_saving_pct": 13.551835623155863
+  },
+  "Proposed – HGB + monotoniškumas": {
+   "sign_accuracy": 0.8808764940239043,
+   "nonphysical_share": 0.0017928286852589642,
+   "zero_effect_share": 0.11733067729083665,
+   "zero_by_action": {
+    "apsukos": 0.003,
+    "greitejimas": 0.011,
+    "greitis": 0.0,
+    "kondicionierius": 0.0,
+    "tuscioji_eiga": 0.544
+   },
+   "neg_by_action": {
+    "apsukos": 0.0,
+    "greitejimas": 0.004,
+    "greitis": 0.003,
+    "kondicionierius": 0.0,
+    "tuscioji_eiga": 0.0
+   },
+   "saving_MAE": 0.39865821291665293,
+   "spearman": 0.7306552066064246,
+   "top1_hit": 0.7065337763012182,
+   "realized_saving_l100": 1.1433377551391204,
+   "realized_saving_pct": 12.76291099302509
+  },
+  "oracle_best_possible_l100": 1.2589760667954255,
+  "by_action_true_saving_mean": {
+   "apsukos": 0.589,
+   "greitejimas": 1.27,
+   "greitis": 1.085,
+   "kondicionierius": 1.087,
+   "tuscioji_eiga": 0.423
+  },
+  "by_action_hgb_saving_mean": {
+   "apsukos": 0.986,
+   "greitejimas": 0.922,
+   "greitis": 0.907,
+   "kondicionierius": 0.822,
+   "tuscioji_eiga": 0.103
+  },
+  "by_action_lr_saving_mean": {
+   "apsukos": 0.899,
+   "greitejimas": 1.189,
+   "greitis": 0.439,
+   "kondicionierius": 1.032,
+   "tuscioji_eiga": -0.099
+  }
+ },
+ "latency_ms": {
+  "median": 4.3421340000122655,
+  "p95": 6.182938899968349,
+  "max": 40.53759699991133,
+  "requirement_ms": 200
+ },
+ "demo_trip": {
+  "trip_id": 97,
+  "km": 38,
+  "litres_actual": 3.501847696709447,
+  "litres_if_followed": 2.9395311311491508,
+  "saving_pct": 16.057710507760913,
+  "log_first": [
+   {
+    "km": 1,
+    "kelias": "magistralė",
+    "greitis": 84,
+    "sanaudos": 12.31,
+    "patarimai": "Greitėkite tolygiau – spauskite akceleratorių švelniau ir anksčiau numatykite stabdymą. (−2.44 l/100 km) | Perjunkite aukštesnę pavarą anksčiau – laikykite apsukas apie 2705 aps./min. (−0.77 l/100 km)",
+    "latency_ms": 4.22
+   },
+   {
+    "km": 2,
+    "kelias": "magistralė",
+    "greitis": 113,
+    "sanaudos": 8.51,
+    "patarimai": "Perjunkite aukštesnę pavarą anksčiau – laikykite apsukas apie 2569 aps./min. (−0.98 l/100 km) | Sumažinkite greitį iki ~103 km/h (dabar 113 km/h). (−0.77 l/100 km)",
+    "latency_ms": 4.38
+   },
+   {
+    "km": 3,
+    "kelias": "magistralė",
+    "greitis": 102,
+    "sanaudos": 6.18,
+    "patarimai": "Perjunkite aukštesnę pavarą anksčiau – laikykite apsukas apie 2608 aps./min. (−1.21 l/100 km)",
+    "latency_ms": 4.42
+   },
+   {
+    "km": 4,
+    "kelias": "magistralė",
+    "greitis": 118,
+    "sanaudos": 9.77,
+    "patarimai": "Greitėkite tolygiau – spauskite akceleratorių švelniau ir anksčiau numatykite stabdymą. (−1.40 l/100 km) | Perjunkite aukštesnę pavarą anksčiau – laikykite apsukas apie 2423 aps./min. (−1.04 l/100 km)",
+    "latency_ms": 4.45
+   },
+   {
+    "km": 5,
+    "kelias": "magistralė",
+    "greitis": 102,
+    "sanaudos": 5.62,
+    "patarimai": "Perjunkite aukštesnę pavarą anksčiau – laikykite apsukas apie 2526 aps./min. (−1.24 l/100 km) | Sumažinkite greitį iki ~94 km/h (dabar 102 km/h). (−0.97 l/100 km)",
+    "latency_ms": 4.37
+   },
+   {
+    "km": 6,
+    "kelias": "magistralė",
+    "greitis": 87,
+    "sanaudos": 5.92,
+    "patarimai": "Perjunkite aukštesnę pavarą anksčiau – laikykite apsukas apie 2609 aps./min. (−0.98 l/100 km) | Greitėkite tolygiau – spauskite akceleratorių švelniau ir anksčiau numatykite stabdymą. (−0.25 l/100 km)",
+    "latency_ms": 4.38
+   }
+  ]
+ },
+ "route_choice": {
+  "best": "A: per miestą (trumpiausias, 18 km)",
+  "routes": {
+   "A: per miestą (trumpiausias, 18 km)": {
+    "km": 18,
+    "litres": 1.389647598966791,
+    "minutes": 37.67844698855152,
+    "litres_physics": 1.2972353767424292
+   },
+   "B: aplinkkelis (24 km)": {
+    "km": 24,
+    "litres": 2.0243027107917224,
+    "minutes": 21.16309128073834,
+    "litres_physics": 1.989692359346438
+   },
+   "C: priemiesčio keliai (21 km)": {
+    "km": 21,
+    "litres": 1.9466262750745644,
+    "minutes": 25.45054945054945,
+    "litres_physics": 1.6789863643733054
+   }
+  }
+ }
+}
